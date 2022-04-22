@@ -1,0 +1,205 @@
+@font-face {
+    font-family: 'Graphik';
+    src: url(../GraphikRegular.otf);
+}
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 75px;
+    z-index: 99;
+}
+
+nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    background-color: #E13C46;
+    z-index: -1;
+    transition: .3s;
+}
+
+nav.active::before {
+    height: 100%;
+}
+
+nav img {
+    cursor: pointer;
+}
+
+.burger {
+    height: 16px;
+    width: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.burger span {
+    height: 1px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.hero-banner {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.hero-banner video {
+    min-height: 100vh;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.content-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 120px;
+}
+
+.hero-banner h1 {
+    font-size: 60px;
+    font-family: 'Graphik';
+    color: #feffff;
+    max-width: 780px;
+    text-align: center;
+}
+
+.hero-banner input {
+    height: 50px;
+    width: 570px;
+    border-radius: 25px;
+    padding: 0 25px;
+    outline: none;
+    border: none;
+}
+
+.content {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.content-wrapper {
+    height: auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    height: 220px;
+    width: 280px;
+    background: url(../img/manhattan.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+.card:nth-child(2) {
+    background: url(../img/queens.jpg);
+}
+
+.card:nth-child(3) {
+    background: url(../img/long-island.jpg);
+}
+
+.card:nth-child(4) {
+    background: url(../img/Florida.jpg);
+}
+
+.card:nth-child(5) {
+    background: url(../img/brooklyn.jpg);
+}
+
+.card:nth-child(6) {
+    background: url(../img/bronx.jpg);
+}
+
+.card:nth-child(3) {
+    background: url(../img/new-jersey.jpg);
+}
+
+.card:last-child {
+    background: url(../img/Westchester__quicksearch.jpg);
+}
+
+.card::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    background-color: rgba(1,25,54,0.7);
+    transition: .3s;
+}
+
+.card:hover::before {
+    background: none;
+}
+
+.card h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    font-family: 'Graphik';
+    color: #feffff;
+    letter-spacing: 1px;
+}
+@media screen and (max-width: 600px) {
+    nav .logo  {
+        display: none;
+    }
+
+    .hero-banner h1 {
+        font-size: 40px;
+        max-width: 60%;
+        margin: 0 20px;
+    }
+
+    .hero-banner input {
+        width: 90%;
+    }
+}
